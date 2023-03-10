@@ -13,7 +13,7 @@ namespace Controllo_Prodotti
 {
     public partial class Form1 : Form
     {
-
+        #region dichiarazioni variabili
         public struct Prodotto
         {
             public string[] prod;
@@ -36,114 +36,121 @@ namespace Controllo_Prodotti
             prodotto.prod = new string[100];
             prodotto.prezzo = new string[100];
         }
-
-
+        #endregion
+        #region Bottoni
         private void button1_Click(object sender, EventArgs e)
         {
+            //chiamata alla funzione di caricamento
             caricamento(textBox1.Text, textBox2.Text);
 
-            
+            //chiamata alla funzione stampa
             stampa();
-
-            MessageBox.Show("Elementi caricati e stampati con successo");
-
+            //stampa del messaggio
+            MessageBox.Show("Elementi caricati e stampati");
+            //svuotamento delle textbox
             textBox1.Text = "";
             textBox2.Text = "";
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            //chiamata alla funzione di falsa ricerca
             falsaricerca(textBox3.Text);
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
+            //variabile posizione
             int posizione = search(textBox3.Text);
             if (posizione != -1)
             {
-                
+                //chiamata alla funzione di cancellazione
                 cancellazione(posizione);
 
-              
+                //chiamata alla funzione stampa
                 stampa();
-
+                //stampa del messaggio
                 MessageBox.Show("Elemento cancellato correttamente");
             }
             else
             {
-                
+                //stampa del messaggio
                 MessageBox.Show("L'elemento non esiste");
             }
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            //variabile posizione
             int posizione = search(textBox3.Text);
 
-            
             if (posizione != -1)
             {
-                
+                //chiamata alla funzione di modifica
                 modifica(textBox4.Text, textBox5.Text, posizione);
-
-                
+                //chiamata alla funzione stampa
                 stampa();
 
-               
+                //stampa del messaggio
                 MessageBox.Show("Elemento modificato");
             }
-            else 
+            else
             {
-               
+                //stampa del messaggio
+
                 MessageBox.Show("L'elemento non esiste");
             }
+            //svuotamento delle textbox
             textBox4.Text = "";
             textBox5.Text = "";
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            //chiamata alla funzione di calcolo del prezzo totale
             calcoloPrezzoTot();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            
+            //chiamata alla funzione di sconto
             sconto(int.Parse(textBox6.Text));
 
-           
+            //chiamata alla funzione stampa
             stampa();
 
-            
+            //svuotamento delle textbox
             textBox6.Text = "";
         }
 
         private void button7_Click(object sender, EventArgs e)
         {
-            
+            //chimata alla funzione di calcolo dello sconto
             sconto(-int.Parse(textBox6.Text));
 
-            
+            //chiamata alla funzione stampa
             stampa();
 
-          
+            //svuotamento delle textbox
             textBox6.Text = "";
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
+            //chimata alla funzione di creazione file
             creazioneFile();
         }
         private void button10_Click(object sender, EventArgs e)
         {
-            read();
+            //chiamata alla funzione di lettura del file
+            LetturaFile();
         }
-
+        #endregion
+        #region Funzioni
         //funzione di caricamento
         static void caricamento(string p, string pr)
         {
-            
+
             prodotto.prod[dim] = p;
             prodotto.prezzo[dim] = pr;
             dim++;
@@ -182,7 +189,7 @@ namespace Controllo_Prodotti
 
             //ciclo di ricerca sequenziale
             for (int i = 0; i < dim; i++)
-            {              
+            {
                 if (prodotto.prod[i] == nome)
                 {
                     pos = i;
@@ -246,14 +253,14 @@ namespace Controllo_Prodotti
         }
 
         //funzione di lettura del file
-        void read()
+        void LetturaFile()
         {
-            
+
             using (StreamReader sr = File.OpenText(filename))
             {
                 string s;
 
-                
+
                 while ((s = sr.ReadLine()) != null)
                 {
                     listView1.Items.Add(s);
@@ -263,3 +270,4 @@ namespace Controllo_Prodotti
 
     }
 }
+#endregion
