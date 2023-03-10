@@ -61,7 +61,7 @@ namespace Controllo_Prodotti
         private void button3_Click(object sender, EventArgs e)
         {
             //variabile posizione
-            int posizione = search(textBox3.Text);
+            int posizione = ricerca(textBox3.Text);
             if (posizione != -1)
             {
                 //chiamata alla funzione di cancellazione
@@ -82,7 +82,7 @@ namespace Controllo_Prodotti
         private void button4_Click(object sender, EventArgs e)
         {
             //variabile posizione
-            int posizione = search(textBox3.Text);
+            int posizione = ricerca(textBox3.Text);
 
             if (posizione != -1)
             {
@@ -150,18 +150,23 @@ namespace Controllo_Prodotti
         //funzione di caricamento
         static void caricamento(string p, string pr)
         {
-
+            //aggiunta del nome del prodotto 
             prodotto.prod[dim] = p;
+            //aggiunta del prezzo del prodotto
             prodotto.prezzo[dim] = pr;
+            //incremento della dimensione
             dim++;
         }
 
         //funzione di stampa
         void stampa()
         {
+            //pulizia della list view
             listView1.Items.Clear();
+            //ciclo per la stampa 
             for (int i = 0; i < dim; i++)
             {
+                //aggiunta degli elementi nella listview
                 listView1.Items.Add(prodotto.prod[i] + " €" + prodotto.prezzo[i]);
             }
         }
@@ -172,71 +177,86 @@ namespace Controllo_Prodotti
             //ciclo di ricerca sequenziale
             for (int i = 0; i < dim; i++)
             {
+                //if che stabilisce che se la ricerca è positiva ovvero quando nel carrello c'è il nome ricercato stampare l'apposito messaggio altrimenti dire prodotto non trovato
                 if (prodotto.prod[i] == nome)
                 {
+                    //stampa del messaggio
                     MessageBox.Show("Elemento trovato");
                     return;
                 }
             }
+            //stampa del messaggio
             MessageBox.Show("Elemento non trovato");
         }
 
         //funzione di ricerca 
-        int search(string nome)
+        int ricerca(string nome)
         {
             //variabile che segna la posizione
-            int pos;
+            int posizione;
 
             //ciclo di ricerca sequenziale
             for (int i = 0; i < dim; i++)
             {
+                //if che verifica la prensenza del nome ricercato all'interno del carrello
                 if (prodotto.prod[i] == nome)
                 {
-                    pos = i;
-                    return pos;
+                    //pongo la posizione del prodotto uguale a i
+                    posizione = i;
+                    //ritorno della posizione
+                    return posizione;
                 }
             }
-            pos = -1;
-            return pos;
+            posizione = -1;
+            //ritorno della posizione
+            return posizione;
         }
 
         //funzione di cancellamento
         void cancellazione(int pos)
         {
+            //ciclo per la cancellazione di un prodotto
             for (int i = pos; i < dim; i++)
             {
                 prodotto.prezzo[i] = prodotto.prezzo[i + 1];
                 prodotto.prod[i] = prodotto.prod[i + 1];
             }
+            //diminuzione della dimensione
             dim--;
         }
 
         //funzione di modifica
-        void modifica(string nome, string prez, int pos)
+        void modifica(string nome, string prezzo, int posizione)
         {
-            prodotto.prod[pos] = nome;
-            prodotto.prezzo[pos] = prez;
+            //pongo il nuovo prodotto inserito uguale alla stringa nome
+            prodotto.prod[posizione] = nome;
+            //pongo il nuovo prodotto inserito uguale alla stringa prez
+            prodotto.prezzo[posizione] = prezzo;
         }
 
         //funzione di calcolo del prezzo totale
         void calcoloPrezzoTot()
         {
-
+            //dichiarazione della variabile prezzo
             float prezzo = 0;
+            //ciclo per il calcolo del prezzo totale
             for (int i = 0; i < dim; i++)
-            {
+            { 
                 prezzo += float.Parse(prodotto.prezzo[i]);
             }
+            //aggiunta del valore prezzo della spesa
             listView1.Items.Add("prezzo spesa: €" + prezzo);
         }
 
         //funzione di calcolo dei prezzi scontati o aumentati
         void sconto(int sconto)
         {
+            //ciclo per il calcolo dello sconto
             for (int i = 0; i < dim; i++)
             {
-                float nuovop = float.Parse(prodotto.prezzo[i]) + (float.Parse(prodotto.prezzo[i]) / 100 * sconto);
-                prodotto.prezzo[i] = nuovop.ToString();
+                //calcolo sconto con variabile float
+                float nuovoprodotto = float.Parse(prodotto.prezzo[i]) + (float.Parse(prodotto.prezzo[i]) / 100 * sconto);
+                prodotto.prezzo[i] = nuovoprodotto.ToString();
             }
         }
 
