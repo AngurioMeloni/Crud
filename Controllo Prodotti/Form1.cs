@@ -13,7 +13,7 @@ namespace Controllo_Prodotti
 {
     public partial class Form1 : Form
     {
-        #region dichiarazione variabili globali
+
         public struct Prodotto
         {
             public string[] prod;
@@ -26,7 +26,7 @@ namespace Controllo_Prodotti
 
         public static Prodotto prodotto = new Prodotto();
 
-        #endregion
+
 
         public Form1()
         {
@@ -37,7 +37,7 @@ namespace Controllo_Prodotti
             prodotto.prezzo = new string[100];
         }
 
-        #region Pulsanti
+
         private void button1_Click(object sender, EventArgs e)
         {
             //chiamata alla funzione di caricamento, prendendo come parametri da mettere nello struct le stringhe presenti nelle textBox
@@ -151,9 +151,6 @@ namespace Controllo_Prodotti
             read();
         }
 
-        #endregion
-
-        #region funzioni di servizio
         //funzione di caricamento
         static void caricamento(string p, string pr)
         {
@@ -301,6 +298,5 @@ namespace Controllo_Prodotti
             }
         }
 
-        #endregion
     }
 }

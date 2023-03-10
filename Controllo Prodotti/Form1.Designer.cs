@@ -46,7 +46,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -61,7 +60,7 @@
             this.listView1.HideSelection = false;
             this.listView1.Location = new System.Drawing.Point(571, 25);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(217, 413);
+            this.listView1.Size = new System.Drawing.Size(217, 378);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.List;
@@ -71,7 +70,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 13);
+            this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Aggiungi un prodotto ";
             // 
@@ -113,7 +112,7 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(12, 66);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(167, 13);
+            this.label3.Size = new System.Drawing.Size(89, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "Ricerca prodotto ";
             // 
@@ -146,11 +145,11 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(324, 173);
+            this.button4.Location = new System.Drawing.Point(333, 133);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(153, 35);
             this.button4.TabIndex = 10;
-            this.button4.Text = "Togli il prodotto ricercato per sostituirlo con un altro prodotto";
+            this.button4.Text = "Sostituisci un prodotto con un altro";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -159,20 +158,20 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(12, 101);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(231, 13);
+            this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 11;
-            this.label4.Text = "Togli o modifica un prodotto inserito nel carrello:";
+            this.label4.Text = "Modifica prodotto";
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(15, 181);
+            this.textBox4.Location = new System.Drawing.Point(12, 141);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(141, 20);
             this.textBox4.TabIndex = 12;
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(177, 181);
+            this.textBox5.Location = new System.Drawing.Point(177, 141);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(141, 20);
             this.textBox5.TabIndex = 13;
@@ -180,7 +179,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 164);
+            this.label5.Location = new System.Drawing.Point(12, 125);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(84, 13);
             this.label5.TabIndex = 14;
@@ -189,7 +188,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(174, 164);
+            this.label6.Location = new System.Drawing.Point(174, 125);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(76, 13);
             this.label6.TabIndex = 15;
@@ -206,36 +205,27 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(324, 214);
+            this.button5.Location = new System.Drawing.Point(620, 413);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 35);
+            this.button5.Size = new System.Drawing.Size(126, 25);
             this.button5.TabIndex = 17;
             this.button5.Text = "Stampa il prezzo totale";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(12, 225);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(260, 13);
-            this.label8.TabIndex = 18;
-            this.label8.Text = "Stampa il prezzo totale dei prodotti inseriti nel carrello: ";
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(12, 273);
+            this.label9.Location = new System.Drawing.Point(92, 171);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(326, 13);
+            this.label9.Size = new System.Drawing.Size(268, 13);
             this.label9.TabIndex = 19;
-            this.label9.Text = "Aggiungi o togli una determinata percentuale dal prezzo dei prodotti:";
+            this.label9.Text = "Aggiungi o togli una percentuale dal prezzo dei prodotti:";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 295);
+            this.label10.Location = new System.Drawing.Point(22, 190);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 13);
             this.label10.TabIndex = 20;
@@ -243,44 +233,44 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(85, 292);
+            this.textBox6.Location = new System.Drawing.Point(95, 187);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(284, 20);
+            this.textBox6.Size = new System.Drawing.Size(257, 20);
             this.textBox6.TabIndex = 21;
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(15, 318);
+            this.button6.Location = new System.Drawing.Point(45, 213);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(174, 35);
             this.button6.TabIndex = 22;
-            this.button6.Text = "Aggiungi la percentuale immessa";
+            this.button6.Text = "Aggiungi la percentuale ";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button7
             // 
-            this.button7.Location = new System.Drawing.Point(195, 318);
+            this.button7.Location = new System.Drawing.Point(272, 213);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(174, 35);
             this.button7.TabIndex = 23;
-            this.button7.Text = "Togli la percentuale immessa";
+            this.button7.Text = "Togli la percentuale";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(15, 380);
+            this.button8.Location = new System.Drawing.Point(12, 413);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(174, 35);
             this.button8.TabIndex = 24;
-            this.button8.Text = "Creazione e aggiornamento del file con il carrello";
+            this.button8.Text = "Creazione e aggiornamento del file";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(195, 380);
+            this.button10.Location = new System.Drawing.Point(192, 413);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(174, 35);
             this.button10.TabIndex = 26;
@@ -300,7 +290,6 @@
             this.Controls.Add(this.textBox6);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.label8);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -346,7 +335,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBox6;
