@@ -298,6 +298,7 @@
             this.button11.TabIndex = 29;
             this.button11.Text = "Prodotto meno costoso";
             this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // Form1
             // 

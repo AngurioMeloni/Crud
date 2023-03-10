@@ -153,7 +153,7 @@ namespace Controllo_Prodotti
         private void button11_Click(object sender, EventArgs e)
         {
             //chiamata della funzione di calcolo del costo più elavato
-            costoMaggiore();
+            costoMinore();
         }
         #endregion
         #region Funzioni
@@ -293,7 +293,24 @@ namespace Controllo_Prodotti
         }
         void costoMinore()
         {
-
+            //dichiarazione della stringa maggiore
+            string maggiore1 = prodotto.prod[0];
+            //dichiarazione del float maggiore 2 
+            float maggiore2 = float.Parse(prodotto.prezzo[0]);
+            //ciclo di controllo del prezzo maggiore
+            for (int i = 0; i < dim; i++)
+            {
+                //se maggiore2 è minore dei prezzi presenti nel carrello salvo quel prezzo e quel nome
+                if (maggiore2 > float.Parse(prodotto.prezzo[i]))
+                {
+                    //salvo il nome del prodotto
+                    maggiore1 = prodotto.prod[i];
+                    //salvo il prezzo del prodotto
+                    maggiore2 = float.Parse(prodotto.prezzo[i]);
+                }
+            }
+            //stampa messaggio
+            MessageBox.Show("Il prodotto più costoso è: " + maggiore1);
         }
         //funzione di creazione del file
         void creazioneFile()
